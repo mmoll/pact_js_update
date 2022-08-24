@@ -6,7 +6,7 @@ const { extractPayload, like } = Matchers;
 const mockSearchProvider = new Pact({
   consumer: "my_frontend",
   provider: "search-service",
-  host: "localhost",
+  host: "127.0.0.1",
   port: 9998,
   logLevel: "debug",
 });
@@ -15,7 +15,7 @@ jest.mock("next/config", () => ({
   __esModule: true,
   default: () => ({
     serverRuntimeConfig: {
-      searchServiceBaseUrl: "http://localhost:9998",
+      searchServiceBaseUrl: "http://127.0.0.1:9998",
     },
   }),
 }));
